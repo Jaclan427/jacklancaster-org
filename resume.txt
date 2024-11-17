@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Jack Lancaster</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Jack Lancaster</h1>
+        <nav>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">Home</a>
+                    <ul class="submenu">
+			<li><a href="index.html#reflection">Reflection</a></li>
+                        <li><a href="resume.html">Resume</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+			<li><a href="index.html#home">Home</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="resume">
+            <h2>Resume</h2>
+            <p>
+                Below is a summary of my experience and skills. You can also <a href="JackLancaster_Resume.pdf" download>download my full resume here</a>.
+            </p>
+            <ul>
+                <li><strong>Programming Languages:</strong> Java, Python, C++</li>
+                <li><strong>Software Development:</strong> Created projects using Arduino and Raspberry Pi</li>
+                <li><strong>Professional Skills:</strong> Communication, teamwork, problem-solving</li>
+                <li><strong>Education:</strong> Bachelor’s in Computer Science, University of Tampa</li>
+                <li><strong>Certifications:</strong> Spartan Ready® Competencies</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jack Lancaster. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
