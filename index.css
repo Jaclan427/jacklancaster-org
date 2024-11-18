@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9; /* Light gray background */
-    color: #333; /* Dark gray text */
+    color: #fff; /* white text */
 }
 
 h1, h2, h3 {
@@ -47,7 +47,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 1.5rem;
 }
 
