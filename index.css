@@ -8,147 +8,108 @@ body {
     color: #333; /* Dark gray text */
 }
 
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1, h2, h3 {
+    color: #000; /* Black for headings */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
-    flex-grow: 1;
+ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Indent bullet points */
+}
+
+a {
+    color: #0078d7; /* Blue links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Header styles */
+header {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 1rem 0;
     text-align: center;
 }
 
-nav {
-    position: relative;
+header h1 {
+    font-size: 2rem;
+    margin: 0;
 }
 
+/* Navigation menu */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 1rem;
 }
 
 nav ul li {
     position: relative;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
+    color: #fff; /* White text for nav links */
     padding: 0.5rem 1rem;
     display: block;
-    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #444;
+    background-color: #444; /* Dark gray hover */
     border-radius: 5px;
 }
 
-nav ul li ul.submenu {
-    list-style: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #000;
-    padding: 0;
-    margin: 0;
-    display: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-nav ul li:hover > ul.submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-}
-
-nav ul li ul.submenu li {
-    margin: 0;
-}
-
-nav ul li ul.submenu li a {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    color: #fff;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li ul.submenu li a:hover {
-    background-color: #444;
-}
-
-section {
+/* Resume section */
+#resume {
+    max-width: 800px;
+    margin: 2rem auto;
     padding: 2rem;
-    margin: 2rem 10%;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* White background for readability */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-section h2 {
-    color: #000;
+#resume h2 {
     font-size: 1.8rem;
+    color: #0078d7; /* Blue for section title */
+    border-bottom: 2px solid #0078d7; /* Blue underline */
+    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
-section h3 {
-    color: #0078d7;
+#resume h3 {
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    color: #333; /* Dark gray for subsection headings */
 }
 
-section p, section ul {
+#resume p, #resume ul {
     margin-bottom: 1rem;
 }
 
-ul {
-    padding-left: 20px;
-    list-style: disc;
-}
-
+/* Footer styles */
 footer {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black footer */
+    color: #fff; /* White text */
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     font-size: 0.9rem;
-    border-top: 2px solid #444;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-a {
-    color: #0078d7;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
     body {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
+    }
+
+    #resume {
+        margin: 1rem;
+        padding: 1.5rem;
     }
 
     header h1 {
@@ -157,19 +118,6 @@ html {
 
     nav ul {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li ul.submenu {
-        position: static;
-        margin-left: 20px;
-    }
-
-    section {
-        margin: 2rem 5%;
+        gap: 0.5rem;
     }
 }
