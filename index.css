@@ -5,170 +5,171 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9; /* Light gray background */
-    color: #fff; /* white text */
+    color: #333; /* Dark gray text */
 }
 
-h1, h2, h3 {
-    color: #000; /* Black for headings */
-    margin-bottom: 1rem; /* Consistent spacing below headings */
-}
-
-/* Links */
-a {
-    color: #0078d7; /* Blue links */
-    text-decoration: none;
-    transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-a:hover {
-    text-decoration: underline; /* Underline links on hover */
-}
-
-/* Header styles */
 header {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    padding: 1.5rem 0;
-    text-align: center;
-    position: sticky; /* Sticky header for easy navigation */
-    top: 0;
-    z-index: 1000;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    font-size: 2.2rem;
     margin: 0;
-    letter-spacing: 1px; /* Slight spacing for elegance */
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
 }
 
-/* Navigation menu */
+nav {
+    position: relative;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: right;
-    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
     position: relative;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #fff; /* White text for nav links */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
     display: block;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #444; /* Dark gray hover */
+    background-color: #444;
     border-radius: 5px;
 }
 
-/* Dropdown menu */
 nav ul li ul.submenu {
-    display: none;
+    list-style: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #000; /* Match header background */
+    background-color: #000;
     padding: 0;
     margin: 0;
-    list-style: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-nav ul li:hover ul.submenu {
-    display: block; /* Show dropdown on hover */
+nav ul li:hover > ul.submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li ul.submenu li {
+    margin: 0;
 }
 
 nav ul li ul.submenu li a {
     padding: 0.5rem 1rem;
-    white-space: nowrap; /* Prevent wrapping */
+    font-size: 0.9rem;
+    color: #fff;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li ul.submenu li a:hover {
-    background-color: #444; /* Dark gray hover */
+    background-color: #444;
 }
 
-/* Main section */
-main {
-    max-width: 900px;
-    margin: 2rem auto;
+section {
     padding: 2rem;
-    background-color: #fff; /* White background for readability */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 2rem 10%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Resume styles */
-#resume h2 {
-    font-size: 2rem;
-    color: #0078d7; /* Blue for section title */
-    border-bottom: 2px solid #0078d7; /* Blue underline */
-    padding-bottom: 0.5rem;
+section h2 {
+    color: #000;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-#resume h3 {
+section h3 {
+    color: #0078d7;
     font-size: 1.5rem;
-    margin-top: 1.5rem;
-    color: #333; /* Dark gray for subsection headings */
+    margin-top: 1rem;
 }
 
-#resume p, #resume ul {
-    margin-bottom: 1.2rem; /* Extra spacing for readability */
+section p, section ul {
+    margin-bottom: 1rem;
 }
 
-#resume ul {
-    list-style-type: disc; /* Bullet points */
-    padding-left: 20px; /* Indent bullet points */
-}
-
-#resume ul ul {
-    list-style-type: circle; /* Nested bullet points */
+ul {
     padding-left: 20px;
+    list-style: disc;
 }
 
-/* Footer styles */
 footer {
-    background-color: #000; /* Black footer */
-    color: #fff; /* White text */
+    background-color: #000;
+    color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     font-size: 0.9rem;
-    margin-top: 2rem;
-    border-top: 3px solid #0078d7; /* Add accent line for style */
+    border-top: 2px solid #444;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive design */
+a {
+    color: #0078d7;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 @media (max-width: 768px) {
     body {
-        font-size: 0.9rem; /* Slightly smaller font for mobile */
+        font-size: 0.9rem;
     }
 
     header h1 {
-        font-size: 1.8rem; /* Adjust header size for smaller screens */
+        font-size: 1.5rem;
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav items vertically */
-        gap: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    main {
-        margin: 1rem;
-        padding: 1.5rem;
+    nav ul li {
+        margin: 10px 0;
     }
 
-    #resume h2 {
-        font-size: 1.8rem; /* Slightly smaller headings */
+    nav ul li ul.submenu {
+        position: static;
+        margin-left: 20px;
     }
 
-    #resume h3 {
-        font-size: 1.2rem;
+    section {
+        margin: 2rem 5%;
     }
 }
