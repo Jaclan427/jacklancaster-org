@@ -10,12 +10,14 @@ body {
 
 h1, h2, h3 {
     color: #000; /* Black for headings */
+    margin-bottom: 1rem; /* Consistent spacing below headings */
 }
 
 /* Links */
 a {
     color: #0078d7; /* Blue links */
     text-decoration: none;
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 a:hover {
@@ -26,13 +28,17 @@ a:hover {
 header {
     background-color: #000; /* Black background */
     color: #fff; /* White text */
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     text-align: center;
+    position: sticky; /* Sticky header for easy navigation */
+    top: 0;
+    z-index: 1000;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin: 0;
+    letter-spacing: 1px; /* Slight spacing for elegance */
 }
 
 /* Navigation menu */
@@ -42,7 +48,7 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 nav ul li {
@@ -53,6 +59,7 @@ nav ul li a {
     color: #fff; /* White text for nav links */
     padding: 0.5rem 1rem;
     display: block;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
 nav ul li a:hover {
@@ -66,19 +73,16 @@ nav ul li ul.submenu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #000;
+    background-color: #000; /* Match header background */
     padding: 0;
     margin: 0;
     list-style: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    border-radius: 5px;
 }
 
 nav ul li:hover ul.submenu {
-    display: block;
-}
-
-nav ul li ul.submenu li {
-    margin: 0;
+    display: block; /* Show dropdown on hover */
 }
 
 nav ul li ul.submenu li a {
@@ -96,7 +100,7 @@ main {
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff; /* White background for readability */
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
@@ -116,7 +120,7 @@ main {
 }
 
 #resume p, #resume ul {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem; /* Extra spacing for readability */
 }
 
 #resume ul {
@@ -136,6 +140,8 @@ footer {
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
+    margin-top: 2rem;
+    border-top: 3px solid #0078d7; /* Add accent line for style */
 }
 
 /* Responsive design */
@@ -145,16 +151,24 @@ footer {
     }
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* Adjust header size for smaller screens */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: column; /* Stack nav items vertically */
+        gap: 0.8rem;
     }
 
     main {
         margin: 1rem;
         padding: 1.5rem;
+    }
+
+    #resume h2 {
+        font-size: 1.8rem; /* Slightly smaller headings */
+    }
+
+    #resume h3 {
+        font-size: 1.2rem;
     }
 }
