@@ -12,14 +12,10 @@ h1, h2, h3 {
     color: #000; /* Black for headings */
 }
 
-ul {
-    list-style-type: disc; /* Bullet points */
-    padding-left: 20px; /* Indent bullet points */
-}
-
+/* Links */
 a {
     color: #0078d7; /* Blue links */
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 a:hover {
@@ -64,18 +60,49 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Resume section */
-#resume {
-    max-width: 800px;
+/* Dropdown menu */
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:hover ul.submenu {
+    display: block;
+}
+
+nav ul li ul.submenu li {
+    margin: 0;
+}
+
+nav ul li ul.submenu li a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+nav ul li ul.submenu li a:hover {
+    background-color: #444; /* Dark gray hover */
+}
+
+/* Main section */
+main {
+    max-width: 900px;
     margin: 2rem auto;
     padding: 2rem;
     background-color: #fff; /* White background for readability */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Resume styles */
 #resume h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #0078d7; /* Blue for section title */
     border-bottom: 2px solid #0078d7; /* Blue underline */
     padding-bottom: 0.5rem;
@@ -90,6 +117,16 @@ nav ul li a:hover {
 
 #resume p, #resume ul {
     margin-bottom: 1rem;
+}
+
+#resume ul {
+    list-style-type: disc; /* Bullet points */
+    padding-left: 20px; /* Indent bullet points */
+}
+
+#resume ul ul {
+    list-style-type: circle; /* Nested bullet points */
+    padding-left: 20px;
 }
 
 /* Footer styles */
@@ -107,11 +144,6 @@ footer {
         font-size: 0.9rem; /* Slightly smaller font for mobile */
     }
 
-    #resume {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-
     header h1 {
         font-size: 1.5rem;
     }
@@ -119,5 +151,10 @@ footer {
     nav ul {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    main {
+        margin: 1rem;
+        padding: 1.5rem;
     }
 }
