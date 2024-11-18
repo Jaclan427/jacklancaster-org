@@ -8,168 +8,143 @@ body {
     color: #333; /* Dark gray text */
 }
 
+h1, h2, h3 {
+    color: #fff; /* White for headings inside the header */
+}
+
+/* Header styles */
 header {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
     padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox for layout */
+    justify-content: center; /* Center "Jack Lancaster" */
+    align-items: center; /* Center items vertically */
+    position: relative; /* For dropdown positioning */
+    min-height: 100px; /* Consistent header height */
 }
 
+/* Center "Jack Lancaster" */
 header h1 {
+    font-size: 2.5rem;
     margin: 0;
-    font-size: 2rem;
-    flex-grow: 1;
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* True center alignment */
 }
 
+/* Navigation menu alignment */
 nav {
-    position: relative;
+    position: absolute;
+    right: 20px; /* Align the dropdown to the right */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 nav ul li {
-    position: relative;
-    margin: 0 15px;
+    position: relative; /* Needed for dropdown positioning */
 }
 
 nav ul li a {
-    color: #fff;
+    color: #fff; /* White text */
     text-decoration: none;
-    font-size: 1rem;
     padding: 0.5rem 1rem;
     display: block;
-    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #444;
+    background-color: #444; /* Dark gray hover */
     border-radius: 5px;
 }
 
+/* Dropdown menu */
 nav ul li ul.submenu {
-    list-style: none;
+    display: none; /* Hidden by default */
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #000;
-    padding: 0;
-    margin: 0;
-    display: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    top: 100%; /* Place below the parent menu */
+    left: 0; /* Align with parent item */
+    background-color: #000; /* Black background */
+    padding: 0.5rem 0; /* Add spacing around items */
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for dropdown */
+    border-radius: 5px; /* Rounded corners */
+    width: 150px; /* Set a consistent width for the dropdown */
 }
 
-nav ul li:hover > ul.submenu {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+nav ul li:hover ul.submenu {
+    display: block; /* Show dropdown on hover */
 }
 
 nav ul li ul.submenu li {
-    margin: 0;
+    margin: 0; /* Remove extra margins */
 }
 
 nav ul li ul.submenu li a {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    padding: 0.5rem 1rem; /* Proper padding for dropdown items */
+    color: #fff; /* White text */
+    text-decoration: none;
+    display: block;
 }
 
 nav ul li ul.submenu li a:hover {
-    background-color: #444;
+    background-color: #444; /* Highlight on hover */
+    border-radius: 5px; /* Match the dropdown style */
 }
 
+/* Section styles */
 section {
     padding: 2rem;
-    margin: 2rem 10%;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+    background: #fff; /* White background for sections */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 section h2 {
-    color: #000;
-    font-size: 1.8rem;
+    color: #000; /* Blue for section headings */
     margin-bottom: 1rem;
 }
 
-section h3 {
-    color: #0078d7;
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
-
-section p, section ul {
+section p, section ul li {
     margin-bottom: 1rem;
 }
 
-ul {
-    padding-left: 20px;
+section ul {
     list-style: disc;
+    padding-left: 20px; /* Indent for bullet points */
 }
 
+/* Footer styles */
 footer {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Black footer */
+    color: #fff; /* White text */
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     font-size: 0.9rem;
-    border-top: 2px solid #444;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
-a {
-    color: #0078d7;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* Responsive design */
 @media (max-width: 768px) {
-    body {
-        font-size: 0.9rem;
-    }
-
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* Smaller font for smaller screens */
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav ul li ul.submenu {
-        position: static;
-        margin-left: 20px;
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 0.5rem;
     }
 
     section {
-        margin: 2rem 5%;
+        margin: 1rem;
+        padding: 1.5rem;
     }
 }
